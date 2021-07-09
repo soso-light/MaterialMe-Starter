@@ -18,9 +18,10 @@ package com.example.android.materialme;
 
 import android.content.res.TypedArray;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
@@ -61,13 +62,13 @@ public class MainActivity extends AppCompatActivity {
      * Initialize the sports data from resources.
      */
     private void initializeData() {
+        TypedArray sportsImageResources = getResources().obtainTypedArray(R.array.sports_images);
+
         // Get the resources from the XML file.
         String[] sportsList = getResources()
                 .getStringArray(R.array.sports_titles);
         String[] sportsInfo = getResources()
                 .getStringArray(R.array.sports_info);
-        TypedArray sportsImageResources =
-                getResources().obtainTypedArray(R.array.sports_images);
 
         // Clear the existing data (to avoid duplication).
         mSportsData.clear();
